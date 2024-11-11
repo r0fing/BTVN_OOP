@@ -13,13 +13,28 @@ import java.util.Currency;
  */
 public class Order {
     private Customer customer;
-    private ArrayList<OrderLine> orderLine = new ArrayList<>();
-    private Currency total;
-    
+    private ArrayList<OrderLine> orderLines = new ArrayList<>();
+    private Currency total ;
+
+    public Order(Customer customer, Currency total) {
+        this.customer = customer;
+        this.total = total;
+    }
+
     public void addLine(OrderLine line) {
-        orderLine.add(line);
+        orderLines.add(line);
     }
+
     public void removeLine(OrderLine line) {
-        orderLine.remove(line);
+        orderLines.remove(line);
     }
+
+    public ArrayList<OrderLine> getOrderLines() {
+        return orderLines;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+    
 }
